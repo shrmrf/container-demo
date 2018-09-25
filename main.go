@@ -10,6 +10,8 @@ func main() {
 	switch os.Args[1] {
 	case "run":
 		run()
+	case "child":
+		child()
 	default:
 		panic("progname run [args]")
 	}
@@ -23,6 +25,10 @@ func run() {
 	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
 	must(cmd.Run())
+}
+
+func child() {
+	fmt.Println("Child process")
 }
 
 func must(err error) {
