@@ -34,7 +34,7 @@ go run main.go run <cmd> <args>
         - `/proc/self/exe` thing (check brackets)
             add `child` arg to switch statement
 
-            remove the `CLONE_NEWUTS` part.. don't need it
+            remove the `CLONE_NEWUTS` part.. don't need it in `child()`
 
 - Rootless Containers, `chroot`
     - talk about `ps` and `ls /proc`
@@ -42,3 +42,6 @@ go run main.go run <cmd> <args>
 
     - `chroot` to a different filesystem
         - don't forget `cd /`
+        - "you have your own root"
+        - `ps` doesn't work
+            - `mount()` and `unmount()` `proc`
