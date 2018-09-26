@@ -11,7 +11,19 @@ Code used for a presentation/demo
 ```bash
 go run main.go run <cmd> <args>
 ```
-
+## Helpers
+```
+  gocode
+  gopkgs
+  go-outline
+  go-symbols
+  guru
+  gorename
+  dlv
+  godef
+  goreturns
+  golint
+```
 ### Presentation
 - Namespaces
     - Scaffold `run()` `must` and:
