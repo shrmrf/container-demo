@@ -5,6 +5,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/xenial64"
 
   config.vm.provision "shell", inline: <<-SHELL
+    add-apt-repository -y ppa:gophers/archive
     apt-get update
     apt-get install -y golang-go tmux build-essential libncurses5-dev
     mkdir -p /downloaded-rootfs && cd /downloaded-rootfs/
