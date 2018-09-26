@@ -1,7 +1,7 @@
 export GOPATH=/home/vagrant/go
 
 mkdir -p $GOPATH
-vim main.go
+
 go get -u github.com/nsf/gocode &
 go get -u github.com/uudashr/gopkgs/cmd/gopkgs &
 go get -u github.com/lukehoban/go-outline &
