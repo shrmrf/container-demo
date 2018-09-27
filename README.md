@@ -2,58 +2,22 @@
 Code used for a presentation/demo
 
 ## Topics
-
 - Namespaces
-- Rootless containers
 - Cgroups
-- Fork Bombs
+
+### Presentation
+I'm not allowed to share it :(
 
 ```bash
-go run main.go run <cmd> <args>
+vagrant up
+
+# after a lot of setup...
+vagrant ssh
+cd /vagrant
+# now, inside the machine...
+# docker            run  <command>
+sudo go run main.go run  bash
+
+# now, you're inside a container!!
+# Mind == BLOWN!
 ```
-## Helpers
-```
-  gocode
-  gopkgs
-  go-outline
-  go-symbols
-  guru
-  gorename
-  dlv
-  godef
-  goreturns
-  golint
-```
-### Presentation
-- Namespaces
-    - Scaffold `run()` `must` and:
-
-        ```go
-        package main
-
-        import (
-            "fmt"
-            "os"
-            "os/exec"
-        )
-        ```
-
-        Type/talk `main()` and test an `echo` command
-
-    - `syscall` with `&syscall.SysProcAttr{ Cloneflags: syscall.CLONE_NEWUTS, }`
-        talk about setting `hostname` and argue where you can set `hostname`
-
-        - `/proc/self/exe` thing (check brackets)
-            add `child` arg to switch statement
-
-            remove the `CLONE_NEWUTS` part.. don't need it in `child()`
-
-- Rootless Containers, `chroot`
-    - talk about `ps` and `ls /proc`
-        `ps` is still not isolated
-
-    - `chroot` to a different filesystem
-        - don't forget `cd /`
-        - "you have your own root"
-        - `ps` doesn't work
-            - `mount()` and `unmount()` `proc`
