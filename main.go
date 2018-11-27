@@ -42,11 +42,11 @@ func child() {
 	cmd.Stdout = os.Stdout
 
 	must(syscall.Sethostname([]byte("container")))
-	must(syscall.Chroot("/downloaded-rootfs"))
+	must(syscall.Chroot("/ubuntu-rootfs"))
 	must(os.Chdir("/"))
-	cmd.SysProcAttr = &syscall.SysProcAttr{
-		Cloneflags: syscall.CLONE_NEWUTS | syscall.CLONE_NEWPID | syscall.CLONE_NEWNS,
-	}
+	// cmd.SysProcAttr = &syscall.SysProcAttr{
+	// 	Cloneflags: syscall.CLONE_NEWUTS | syscall.CLONE_NEWPID | syscall.CLONE_NEWNS,
+	// }
 	must(cmd.Run())
 }
 
